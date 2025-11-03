@@ -7,3 +7,8 @@ on:
 jobs:
     call-semantic-release:
         uses: Astro-BEAM-AUTh/infrastructure/.github/workflows/semantic-release.yml@main
+        permissions:
+            contents: write
+            packages: write
+            issues: write
+            pull-requests: write
