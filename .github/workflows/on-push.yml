@@ -1,0 +1,9 @@
+name: On Push
+on:
+    push:
+        branches: [ main ]
+    workflow_dispatch:
+
+jobs:
+    call-semantic-release:
+        uses: Astro-BEAM-AUTh/infrastructure/.github/workflows/semantic-release.yml@main
