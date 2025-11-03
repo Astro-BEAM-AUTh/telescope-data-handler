@@ -28,10 +28,9 @@ dev = [
 
 [tool.semantic_release]
 # build_command = "pip install build && python -m build" # Old build command
-# build_command = "python -m build --sdist --wheel ." # PSR's recommended build command
 build_command = """
-    python -m pip install -e '.[build]'
-    uv lock --upgrade-package "$PACKAGE_NAME"
+    python -m pip install uv
+    uv lock --upgrade-package data-handler
     git add uv.lock
     uv build
 """ # New build command with uv lock upgrade
@@ -40,7 +39,6 @@ commit_parser = "conventional"
 logging_use_named_masks = false
 major_on_zero = true
 allow_zero_version = true
-repo_dir = "C:\\Users\\Herck\\GitHub Repos\\Astro\\telescope-data-handler"
 tag_format = "v{version}"
 version_toml = ["pyproject.toml:project.version"]
 
